@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Title;
 
-class UserController extends Controller
+class TitleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showUserInsertForm()
+    public function index()
     {
-        //
+        $all=Title::all();
+        return view('backend.module',['header'=>'網站標題管理','module'=>'Title','rows'=>$all]);
     }
 
     /**
