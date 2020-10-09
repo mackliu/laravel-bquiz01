@@ -18,7 +18,7 @@ class CreateTitlesTable extends Migration
             $table->string('text',64)->nullable();
             $table->string('img',100)->nullable();
             $table->boolean('sh')->default(0);
-            $table->softDeletes('delete_at',0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

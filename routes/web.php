@@ -27,6 +27,7 @@ use App\Http\Controllers\MenuController;
 Route::view('/', 'home');
 Route::redirect('/admin','/admin/title');
 Route::prefix('admin')->group(function(){
+    //get
     Route::get('/title',[TitleController::class,'index']);
     Route::get('/ad',[AdController::class,'index']);
     Route::get('/image',[ImageController::class,'index']);
@@ -36,11 +37,20 @@ Route::prefix('admin')->group(function(){
     Route::get('/news',[NewsController::class,'index']);
     Route::get('/admin',[AdminController::class,'index']);
     Route::get('/menu',[MenuController::class,'index']);
+
+    //post
+    Route::post('/title',[TitleController::class,'store']);
+    Route::post('/ad',[AdController::class,'store']);
+    Route::post('/image',[ImageController::class,'store']);
+    Route::post('/mvim',[MvimController::class,'store']);
+    Route::post('/news',[NewsController::class,'store']);
+    Route::post('/admin',[AdminController::class,'store']);
+    Route::post('/menu',[MenuController::class,'store']);
 });
 
 
 //modals
 
-Route::view("/modals/addTitle",'modals.base_modal',['modal_header'=>"新增網站標題"]);
-Route::view("/modals/addAd",'modals.base_modal',['modal_header'=>"新增動態廣告文字"]);
+Route::get("/modals/addTitle",[TitleController::class,'create']);
+Route::get("/modals/addAd",[AdController::class,'create']);
 Route::view("/modals/addImage",'modals.base_modal',['modal_header'=>"新增校園映像圖片"]);

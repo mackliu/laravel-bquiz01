@@ -26,6 +26,27 @@ class TitleController extends Controller
     public function create()
     {
         //
+        $view=[
+            'action'=>'/admin/title',
+            'modal_header'=>"新增網站標題",
+            'modal_body'=>[
+                [
+                    'label'=>'標題區圖片',
+                    'tag'=>'input',
+                    'type'=>'file',
+                    'name'=>'img'
+                ],
+                [
+                    'label'=>'標題區替代文字',
+                    'tag'=>'input',
+                    'type'=>'text',
+                    'name'=>'text'
+                ],
+            ],
+        ];
+
+
+        return view("modals.base_modal",$view);
     }
 
     /**
@@ -37,6 +58,16 @@ class TitleController extends Controller
     public function store(Request $request)
     {
         //
+        if($request->hasFile('img') && $request->file('img')->isValid()){
+            $title=new Title;
+            $request->file('img')->storeAs('public',$request->file('img')->getClientOriginalName());
+
+            $title->img=$request->file('img')->getClientOriginalName();
+            $title->text=$request->input('text');
+            $title->save();
+        }
+
+        return redirect('/admin/title');
     }
 
     /**
