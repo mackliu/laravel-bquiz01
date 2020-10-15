@@ -35,7 +35,15 @@ class AdController extends Controller
                 'action'=>'delete',
                 'id'=>$a->id,
                 'text'=>'刪除',
-              ]
+              ],
+              [
+                'tag'=>'button',
+                'type'=>'button',
+                'btn_color'=>'btn-info',
+                'action'=>'edit',
+                'id'=>$a->id,
+                'text'=>'編輯',
+              ] 
             ];
 
             $rows[]=$tmp;
