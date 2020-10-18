@@ -9,4 +9,8 @@ class SubMenu extends Model
 {
     use HasFactory;
     protected $fillable=['text','href','menu_id'];
+
+    public function menu(){
+        return $this->belongsTo("App\Models\Menu");
+    }
 }

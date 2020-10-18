@@ -3,29 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Mvim;
-class MvimController extends Controller
+use App\Models\SubMenu;
+
+class SubMenuController extends Controller
 {
-    public function index()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index($menu_id)
     {
-        $all=Mvim::all();
-        $cols=['動畫圖片','顯示','刪除','操作'];
+
+        $all=SubMenu::where("menu_id",$menu_id)->get();
+        $cols=['次選單名稱','次選單連結網址','刪除','操作',''];
         $rows=[];
 
         foreach($all as $a){
             $tmp=[
               [
-                  'tag'=>'embed',
-                  'src'=>$a->img,
-                  'style'=>'width:120px;height:80px'
+                  'tag'=>'',
+                  'text'=>$a->text
               ],
               [
-                  'tag'=>'button',
-                  'type'=>'button',
-                  'btn_color'=>'btn-success',
-                  'action'=>'show',
-                  'id'=>$a->id,
-                  'text'=>($a->sh==1)?'顯示':'隱藏',
+                  'tag'=>'',
+                  'text'=>$a->href
               ],
               [
                 'tag'=>'button',
@@ -42,7 +44,7 @@ class MvimController extends Controller
                 'action'=>'edit',
                 'id'=>$a->id,
                 'text'=>'編輯',
-              ]  
+              ]
             ];
 
             $rows[]=$tmp;
@@ -51,10 +53,11 @@ class MvimController extends Controller
         //dd($rows);
 
         $view=[
-            'header'=>'動畫圖片管理',
-            'module'=>'Mvim',
+            'header'=>'次選單管理',
+            'module'=>'SubMenu',
             'cols'=>$cols,
-            'rows'=>$rows
+            'rows'=>$rows,
+            'menu_id'=>$menu_id
         ];
         return view('backend.module',$view);
     }
@@ -64,22 +67,27 @@ class MvimController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($menu_id)
     {
-        //
         $view=[
-            'action'=>'/admin/mvim',
-            'modal_header'=>"新增動畫圖片",
+            'action'=>'/admin/submenu/'.$menu_id,
+            'modal_header'=>"新增次選單",
             'modal_body'=>[
                 [
-                    'label'=>'動畫圖片',
+                    'label'=>'次選單名稱',
                     'tag'=>'input',
-                    'type'=>'file',
-                    'name'=>'img'
+                    'type'=>'text',
+                    'name'=>'text',
                 ],
-                
+                [
+                    'label'=>'次選單連結網址',
+                    'tag'=>'input',
+                    'type'=>'text',
+                    'name'=>'href',
+                ],
             ],
         ];
+
 
         return view("modals.base_modal",$view);
     }
@@ -90,19 +98,15 @@ class MvimController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$menu_id)
     {
-        //
-        if($request->hasFile('img') && $request->file('img')->isValid()){
-            $mvim=new Mvim;
-            
-            $request->file('img')->storeAs('public',$request->file('img')->getClientOriginalName());
-
-            $mvim->img=$request->file('img')->getClientOriginalName();
-            $mvim->save();
-        }
-
-        return redirect('/admin/mvim');
+        $sub=new SubMenu;
+        $sub->text=$request->input('text');
+        $sub->href=$request->input('href');
+        $sub->menu_id=$menu_id;
+        $sub->save();
+  
+        return redirect('/admin/submenu/'.$menu_id);
     }
 
     /**
@@ -124,27 +128,29 @@ class MvimController extends Controller
      */
     public function edit($id)
     {
-        //
-        $mvim=Mvim::find($id);
+        $sub=SubMenu::find($id);
         $view=[
-            'action'=>'/admin/mvim/'.$id,
+            'action'=>'/admin/submenu/'.$id,
             'method'=>'PATCH',
-            'modal_header'=>"更換動畫圖片",
+            'modal_header'=>"編輯次選單內容",
             'modal_body'=>[
                 [
-                    'label'=>'目前動畫',
-                    'tag'=>'embed',
-                    'src'=>$mvim->img,
-                    'style'=>'width:120px;height:80px'
+                    'label'=>'次選單名稱',
+                    'tag'=>'input',
+                    'type'=>'text',
+                    'name'=>'text',
+                    'value'=>$sub->text
                 ],
                 [
-                    'label'=>'更換動畫圖片',
+                    'label'=>'次選單連結網址',
                     'tag'=>'input',
-                    'type'=>'file',
-                    'name'=>'img'
-                ]               
+                    'type'=>'text',
+                    'name'=>'href',
+                    'value'=>$sub->href
+                ],
             ],
         ];
+
 
         return view("modals.base_modal",$view);
 
@@ -159,27 +165,19 @@ class MvimController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
 
-        $mvim=Mvim::find($id);
+        $sub=SubMenu::find($id);
 
-        if($request->hasFile('img') && $request->file('img')->isValid()){
-            $request->file('img')->storeAs('public',$request->file('img')->getClientOriginalName());
-            $mvim->img=$request->file('img')->getClientOriginalName();
-            $mvim->save();
+        
+        if($sub->text!=$request->input('text')){
+            $sub->text=$request->input('text');
+        }
+        if($sub->href!=$request->input('href')){
+            $sub->href=$request->input('href');
         }
         
-        return redirect('/admin/mvim');
-    }
-
-    /**
-     * 改變資料的顯示狀態
-     */
-
-    public function display($id){
-        $mvim=Mvim::find($id);
-        $mvim->sh=($mvim->sh+1)%2;
-        $mvim->save();
+        $sub->save();
+        return redirect('/admin/submenu/'.$sub->menu_id);
     }
 
     /**
@@ -191,6 +189,6 @@ class MvimController extends Controller
     public function destroy($id)
     {
         //
-        Mvim::destroy($id);
+        SubMenu::destroy($id);
     }
 }

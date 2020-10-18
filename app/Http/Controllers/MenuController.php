@@ -25,7 +25,7 @@ class MenuController extends Controller
               ],
               [
                   'tag'=>'',
-                  'text'=>0
+                  'text'=>$a->subs->count(),
               ],
               [
                   'tag'=>'button',
@@ -50,6 +50,14 @@ class MenuController extends Controller
                 'action'=>'edit',
                 'id'=>$a->id,
                 'text'=>'編輯',
+              ],
+              [
+                'tag'=>'button',
+                'type'=>'button',
+                'btn_color'=>'btn-warning',
+                'action'=>'sub',
+                'id'=>$a->id,
+                'text'=>'次選單',
               ] 
             ];
 
@@ -161,7 +169,7 @@ class MenuController extends Controller
     {
         //
 
-        $menu=menu::find($id);
+        $menu=Menu::find($id);
 
         
         if($menu->text!=$request->input('text')){

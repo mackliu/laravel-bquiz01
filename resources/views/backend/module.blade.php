@@ -10,6 +10,10 @@
     @if($module !='Total' && $module != 'Bottom')
     <button class="btn btn-sm btn-primary float-left" id="addRow">新增</button>
     @endif
+
+    @isset($menu_id)
+        <input type="hidden" name="menu_id" value="{{$menu_id}}">
+    @endisset
     {{ $header }}
     </h5>
     <table class="table border-none text-center">
@@ -72,16 +76,29 @@ $.ajaxSetup({
 });
 
 $("#addRow").on("click",function(){
-    $.get("/modals/add{{ $module }}",function(modal){
-        $("#modal").html(modal)
-        $("#baseModal").modal("show")
 
-        $("#baseModal").on("hidden.bs.modal",function(){
-            $("#baseModal").modal("dispose")
-            $("#modal").html("")
+    @isset($menu_id)
+        $.get("/modals/add{{ $module }}/{{$menu_id}}",function(modal){
+            $("#modal").html(modal)
+            $("#baseModal").modal("show")
+
+            $("#baseModal").on("hidden.bs.modal",function(){
+                $("#baseModal").modal("dispose")
+                $("#modal").html("")
+            })
         })
+    @else
+        $.get("/modals/add{{ $module }}",function(modal){
+            $("#modal").html(modal)
+            $("#baseModal").modal("show")
 
-    })
+            $("#baseModal").on("hidden.bs.modal",function(){
+                $("#baseModal").modal("dispose")
+                $("#modal").html("")
+            })
+        })
+    @endif
+    
 })
 
 
@@ -100,24 +117,37 @@ $(".edit").on("click",function(){
 
 $(".delete").on("click",function(){
     let id=$(this).data('id')
+    let _this=$(this)
     $.ajax({
         type:'delete',
         url:`/admin/{{ strtolower($module) }}/${id}`,
         success:function(){
-            location.reload()
+            _this.parents('tr').remove()
         }
     })
 })
 
 $(".show").on("click",function(){
     let id=$(this).data('id')
+    let _this=$(this)
     $.ajax({
         type:'patch',
         url:`/admin/{{ strtolower($module) }}/sh/${id}`,
         success:function(){
-            location.reload()
+            if(_this.text()=="顯示"){
+                _this.text('隱藏')
+            }else{
+                _this.text('顯示')
+            }
         }
     })
+})
+
+
+$(".sub").on("click",function(){
+    let id=$(this).data("id")
+    location.href=`/admin/submenu/${id}`
+
 })
 </script>
 @endsection
