@@ -1,7 +1,7 @@
 @extends("layouts.layout")
 
 @section("main")
-@include("layouts.backend_sidebar")
+@include("layouts.backend_sidebar",['total'=>$total])
 <div class="main col-9 p-0 d-flex flex-wrap align-items-start">
     <div class="col-8 border py-3 text-center">後台管理區</div>
     <button class="col-4 btn btn-light border py-3 text-center">管理登出</button>
@@ -133,6 +133,26 @@ $(".show").on("click",function(){
     $.ajax({
         type:'patch',
         url:`/admin/{{ strtolower($module) }}/sh/${id}`,
+
+        @if($module=='Title')
+        success:function(img){
+
+            if(_this.text()=="顯示"){
+                $(".show").each((idx,dom)=>{
+                    if($(dom).text()=='隱藏'){
+                        $(dom).text("顯示")
+                        return false;
+                    }
+                })
+                _this.text('隱藏')
+            }else{
+                $(".show").text("隱藏")
+                _this.text('顯示')
+            }
+
+            $(".header img").attr("src","http://quiz01.com/storage/"+img)
+        }
+        @else
         success:function(){
             if(_this.text()=="顯示"){
                 _this.text('隱藏')
@@ -140,6 +160,7 @@ $(".show").on("click",function(){
                 _this.text('顯示')
             }
         }
+        @endif
     })
 })
 

@@ -11,5 +11,5 @@
         <div class="list-group-item list-group-item-action px-0"><a class="d-block" href="/admin/admin">管理者管理</a></div>
         <div class="list-group-item list-group-item-action px-0"><a class="d-block" href="/admin/menu">選單管理</a></div>
     </div>
-    <div class="border text-center my-2">訪客人數:</div>
+    <div class="border text-center my-2">訪客人數:{{$total}}</div>
 </div>

@@ -46,13 +46,12 @@ class AdminController extends Controller
 
         //dd($rows);
 
-        $view=[
-            'header'=>'管理者管理',
-            'module'=>'Admin',
-            'cols'=>$cols,
-            'rows'=>$rows
-        ];
-        return view('backend.module',$view);
+
+        $this->view['header']='管理者管理';
+        $this->view['module']='Admin';
+        $this->view['cols']=$cols;
+        $this->view['rows']=$rows;
+        return view('backend.module',$this->view);
      
     }
 
