@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
-class NewsController extends Controller
+class NewsController extends HomeController
 {
+
+    public function list(){
+        parent::sideBar();
+
+        return view('news',$this->view);
+    }
     public function index()
     {
 
