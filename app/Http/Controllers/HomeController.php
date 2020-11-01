@@ -9,7 +9,7 @@ use App\Models\Image;
 use App\Models\AD;
 use App\Models\Mvim;
 use App\Models\News;
-
+use Auth;
 
 class HomeController extends Controller
 {
@@ -49,6 +49,10 @@ class HomeController extends Controller
             $subs=$menu->subs;
             $menu->subs=$subs;
             $menus[$key]=$menu;
+        }
+
+        if(Auth::user()){
+            $this->view['user']=Auth::user();
         }
 
         $this->view['ads']=$ads;
