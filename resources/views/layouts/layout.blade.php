@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>科技大學校園資訊系統</title>
+    <script src="https://unpkg.com/vue@next"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body>
+<body id="app">
 <div class="container">
 <div class="header w-100">
-    <a href="/" title="{{$title->text}}"><img src="{{ asset('storage/'.$title->img) }}" alt="{{$title->text}}" class="w-100"></a>
+    <a href="/" :title="title"><img :src="titleImg"  class="w-100"></a>
 </div>
 <div class="main d-flex" style="height:568px">
     @yield("main")
 </div>
 <div class="footer w-100">
-    <div class="text-center" style="height:100px;line-height:100px;background:yellow">{{$bottom}}</div>
+    <div class="text-center" style="height:100px;line-height:100px;background:yellow">@{{bottom}}</div>
 </div>
 </div>
 <div id="modal"></div>

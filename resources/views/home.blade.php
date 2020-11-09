@@ -24,7 +24,7 @@
     </div>
 </div>
 <div class="main col-6">
-    <marquee >{{ $ads }}</marquee>
+    <marquee >@{{ adstr }}</marquee>
 
 @yield('center')
 </div>
@@ -113,6 +113,21 @@ $('.new').hover(
 
 
 )
+
+const app={
+    data(){
+        const adstr='{{ $ads }}';
+        const bottom='{{ $bottom}}';
+        const titleImg="{{ asset('storage/'.$title->img) }}";
+        const title='{{$title->text}}';
+
+        return {
+           adstr,titleImg,title,bottom
+        }
+    }
+}
+
+Vue.createApp(app).mount('#app')
 
 </script>
 
