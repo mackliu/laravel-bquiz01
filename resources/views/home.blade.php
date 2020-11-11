@@ -3,24 +3,21 @@
 @section("main")
 <div class="menu col-3">
     <div class="text-center py-2 border-bottom my-1">主選單區</div>
-    @isset($menus)
-        <ul class="list-group">
-            @foreach($menus as $menu)
-            <li class="list-group-item list-group-item-action py-1 bg-warning position-relative menu">
-                <a href="{{ $menu->href}}">{{ $menu->text}}</a>
-                @isset($menu->subs)
-                <ul class="list-group position-absolute w-75 subs" style="z-index:99;display:none;left:100px;top:25px">
-                    @foreach($menu->subs as $sub)
-                    <li class="list-group-item list-group-item-action bg-success py-1" ><a href="{{$sub->href}}" style="color:white">{{ $sub->text }}</a></li>
-                    @endforeach
-                </ul>
-                @endisset
-            </li>
-            @endforeach
-        </ul>
-    @endisset
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action py-1 bg-warning position-relative menu" v-for="menu in menus"  @mouseover='menu.show=true' @mouseleave="menu.show=false">
+            <a :href="menu.href">@{{ menu.text }}</a>
+
+            <ul class="list-group position-absolute w-75 subs" style="z-index:99;left:100px;top:25px" v-if="menu.subs.length>0" v-show="menu.show">
+                <li class="list-group-item list-group-item-action bg-success py-1" v-for="sub in menu.subs">
+                    <a :href="sub.href"  style="color:white">@{{ sub.text }}</a>
+                </li>
+            </ul>
+        </li>
+    
+    </ul>
+
     <div class="viewer">
-        進站總人數：{{$total}}
+        進站總人數：@{{total}}
     </div>
 </div>
 <div class="main col-6">
@@ -41,7 +38,7 @@
 
     @foreach($images as $img)
 
-        <div class="img"><img src="{{asset('storage/'.$img->img)}}"></div>
+        <div class="img"><img src="{{asset('storage/'.$img->img)}}" class=" mx-auto"></div>
 
     @endforeach
 
@@ -55,6 +52,10 @@
 @section("script")
 
 <script>
+
+
+
+
     $(".menu").hover(
         function(){
             $(this).children('.subs').show()
@@ -113,21 +114,23 @@ $('.new').hover(
 
 
 )
-
 const app={
     data(){
         const adstr='{{ $ads }}';
         const bottom='{{ $bottom}}';
         const titleImg="{{ asset('storage/'.$title->img) }}";
         const title='{{$title->text}}';
+        const total={{ $total }};
+        const menus=JSON.parse('{!! $menus !!}');
 
         return {
-           adstr,titleImg,title,bottom
+           adstr,titleImg,title,bottom,total,menus
         }
     }
 }
 
 Vue.createApp(app).mount('#app')
+
 
 </script>
 

@@ -48,6 +48,7 @@ class HomeController extends Controller
         foreach($menus as $key => $menu){
             $subs=$menu->subs;
             $menu->subs=$subs;
+            $menu->show=false;
             $menus[$key]=$menu;
         }
 
