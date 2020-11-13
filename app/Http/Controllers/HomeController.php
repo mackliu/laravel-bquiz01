@@ -42,8 +42,20 @@ class HomeController extends Controller
 
    
     protected function sideBar(){
-        $menus=Menu::where('sh',1)->get();
-        $images=Image::where('sh',1)->get();
+        $menus=Menu::select('id','text','href')->where('sh',1)->get();
+
+        $images=Image::select('id','img')->where('sh',1)->get()->map(function($val,$idx){
+            $val->img=asset("storage/".$val->img);
+            if($idx>2){
+                $val->show=false;
+                
+            }else{
+                $val->show=true;
+
+            }
+            return $val;
+        });
+
         $ads=implode("　",AD::where("sh",1)->get()->pluck('text')->all());
         foreach($menus as $key => $menu){
             $subs=$menu->subs;

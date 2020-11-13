@@ -32,18 +32,12 @@
 @guest
 <a href='/login' class="btn btn-primary py-3 w-100 my-2">管理登入</a>
 @endguest
-<div class="text-center py-2 border-bottom my-1">主選單區</div>
-<div class="up"></div>
-@isset($images)
+<div class="text-center py-2 border-bottom my-1">校園映像區</div>
+<div class="up" @click="switchImg('up')"></div>
 
-    @foreach($images as $img)
+    <div class="img" v-for="img in images" v-show="img.show"><img :src="img.img" class=" mx-auto"></div>
 
-        <div class="img"><img src="{{asset('storage/'.$img->img)}}" class=" mx-auto"></div>
-
-    @endforeach
-
-@endisset
-<div class="down"></div>
+<div class="down" @click="switchImg('down')"></div>
 </div>
 
 
@@ -52,47 +46,6 @@
 @section("script")
 
 <script>
-
-
-
-
-    $(".menu").hover(
-        function(){
-            $(this).children('.subs').show()
-        },
-        function(){
-            $(this).children('.subs').hide()
-        }
-    )
-
-
-let num=$(".img").length;
-let p=0;
-$(".img").each((idx,dom)=>{
-    if(idx<3){
-        $(dom).show()
-    }
-})
-
-$(".up,.down").on("click",function(){
-    $(".img").hide()
-    switch($(this).attr('class')){
-        case 'up':
-         p=(p>0)?--p:p;
-
-        break;
-        case 'down':
-         p=(p<num-3)?++p:p;
-        break;
-    }
-
-    $(".img").each((idx,dom)=>{
-        if(idx>=p && idx<=p+2){
-            $(dom).show()
-        }
-    })
-
-})
 
 $(".mv").eq(0).show()
 let mvNum=$(".mv").length;
@@ -122,9 +75,32 @@ const app={
         const title='{{$title->text}}';
         const total={{ $total }};
         const menus=JSON.parse('{!! $menus !!}');
-
+        const images=JSON.parse('{!! $images !!}');
+        const ip=0;
         return {
-           adstr,titleImg,title,bottom,total,menus
+           adstr,titleImg,title,bottom,total,menus,images,ip
+        }
+    },
+    methods:{
+        switchImg(type){
+            switch(type){
+                case 'up':
+                    this.ip=(this.ip>0)?--this.ip:this.ip;
+                break;
+                case 'down':
+                    this.ip=(this.ip<this.images.length-3)?++this.ip:this.ip;
+                break;
+            }
+
+            this.images.map((img,idx)=>{
+                if(idx>=this.ip && idx<=this.ip+2){
+                    img.show=true;
+                }else{
+                    img.show=false;
+                }
+                return img;
+            })
+
         }
     }
 }
