@@ -47,26 +47,6 @@
 
 <script>
 
-$(".mv").eq(0).show()
-let mvNum=$(".mv").length;
-let now=0;
-setInterval(() => {
-    $(".mv").hide()
-    ++now;
-    $(".mv").eq(now%mvNum).show();
-
-}, 3000);
-
-$('.new').hover(
-    function(){
-        $(this).children('div').show()
-    },
-    function(){
-        $(this).children('div').hide()
-    }
-
-
-)
 const app={
     data(){
         const adstr='{{ $ads }}';
@@ -77,8 +57,14 @@ const app={
         const menus=JSON.parse('{!! $menus !!}');
         const images=JSON.parse('{!! $images !!}');
         const ip=0;
+        const mvims=JSON.parse('{!! $mvims !!}');
+        const newss=JSON.parse('{!! $news !!}');
+        @isset($more)
+        const more='{{ $more }}';
+        @endisset
         return {
-           adstr,titleImg,title,bottom,total,menus,images,ip
+           adstr,titleImg,title,bottom,total,menus,images,ip,
+            mvims,newss,@isset($more) more @endisset
         }
     },
     methods:{
@@ -102,6 +88,19 @@ const app={
             })
 
         }
+    },
+    mounted(){
+        let m=1;
+        setInterval(() => {
+            
+            this.mvims.map((mv,idx)=>{
+                mv.show=(idx==m)?true:false
+                return mv
+            })
+        
+            m=(m+1)%this.mvims.length
+
+        }, 3000);
     }
 }
 

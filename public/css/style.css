@@ -26,7 +26,6 @@
 .img{
     margin:5px auto;
     text-align:center;
-    display:none;
 }
 
 .viewer{
@@ -39,7 +38,4 @@
 .mv img{
     width:90%;
     height:250px;
-}
-.mv{
-    display:none;
 }
