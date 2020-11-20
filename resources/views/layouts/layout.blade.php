@@ -10,16 +10,16 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body id="app">
-<div class="container">
+<body>
+<div class="container"  id="app">
 <div class="header w-100">
-    <a href="/" :title="title"><img :src="titleImg"  class="w-100"></a>
+    <a href="/" :title="site.title.text"><img :src="site.title.img"  class="w-100"></a>
 </div>
 <div class="main d-flex" style="height:568px">
     @yield("main")
 </div>
 <div class="footer w-100">
-    <div class="text-center" style="height:100px;line-height:100px;background:yellow">@{{bottom}}</div>
+    <div class="text-center" style="height:100px;line-height:100px;background:yellow">@{{site.bottom}}</div>
 </div>
 </div>
 <div id="modal"></div>
