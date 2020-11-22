@@ -20,7 +20,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('main');
+    }
+
+    public function home(){
         $this->sideBar();
 
 
@@ -47,9 +51,9 @@ class HomeController extends Controller
 
         $this->view['mvims']=$mvims;
         $this->view['news']['data']=$news;
-        return view('main',$this->view);
-    }
 
+        return $this->view;
+    }
    
     protected function sideBar(){
         $menus=Menu::select('id','text','href')->where('sh',1)->get();

@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container"  id="app">
-<div class="header w-100">
-    <a href="/" :title="site.title.text"><img :src="site.title.img"  class="w-100"></a>
-</div>
-<div class="main d-flex" style="height:568px">
-    @yield("main")
-</div>
-<div class="footer w-100">
-    <div class="text-center" style="height:100px;line-height:100px;background:yellow">@{{site.bottom}}</div>
-</div>
+    <div class="header w-100" v-if="show">
+        <a href="/" :title="site.title.text"><img :src="site.title.img"  class="w-100"></a>
+    </div>
+    <div class="main d-flex" style="height:568px" v-if="show">
+        @yield("main")
+    </div>
+    <div class="footer w-100" v-if="show">
+        <div class="text-center" style="height:100px;line-height:100px;background:yellow">@{{site.bottom}}</div>
+    </div>
 </div>
 <div id="modal"></div>
 
