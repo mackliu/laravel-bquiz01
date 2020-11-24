@@ -75,7 +75,7 @@ const app={
     mounted(){
         axios.get("/api")
     .then((res)=>{
-        console.log(res.data)
+       // console.log(res.data)
         this.site=res.data.site;
         this.menus=res.data.menus;
         this.images=res.data.images;
@@ -98,7 +98,30 @@ const app={
     }
 }
 
-Vue.createApp(app).mount('#app')
+Vue.createApp(app).component('marquee',{
+    template:`
+        <div style="position:relative;width:100%;height:35px;overflow:hidden" ref="marquee">
+            <div style="position:absolute;width:max-content" ref="content">
+                <slot></slot>
+            </div>
+        </div>
+    `,
+    mounted(){
+        let marquee=this.$refs.marquee.offsetWidth;
+        let content=this.$refs.content.offsetWidth;
+        this.$refs.content.style.right=(0-content)+"px";
+        let pos=0-content;
+        setInterval(() => {
+            pos++;
+            this.$refs.content.style.right=pos+"px";
+            if(pos>=marquee){
+                this.$refs.content.style.right=(0-content)+"px";
+                pos=0-content
+            }
+        }, 15);
+
+    }
+}).mount('#app')
 
 
 </script>
