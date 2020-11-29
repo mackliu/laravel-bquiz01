@@ -1,13 +1,8 @@
 @extends('home')
 
 @section("center")
-<div class="mvims" style="height:265px">
+<mvims :mvims="mvims"></mvims>
 
-        <div class="mv text-center" v-for="mv in mvims" v-show="mv.show">
-            <img :src="mv.img" class="mx-auto">
-        </div>
-
-</div>
 <div class="news" style="height:265px">
 <div class="text-center py-2 border-bottom my-1">最新消息區
     

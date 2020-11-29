@@ -32,12 +32,9 @@
 @guest
 <a href='/login' class="btn btn-primary py-3 w-100 my-2">管理登入</a>
 @endguest
-<div class="text-center py-2 border-bottom my-1">校園映像區</div>
-<div class="up" @click="switchImg('up')"></div>
 
-    <div class="img" v-for="img in images.data" v-show="img.show"><img :src="img.img" class=" mx-auto"></div>
+    <images :images="images" title="校園風情"></images>
 
-<div class="down" @click="switchImg('down')"></div>
 </div>
 
 
