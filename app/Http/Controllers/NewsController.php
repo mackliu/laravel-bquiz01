@@ -7,6 +7,37 @@ use App\Models\News;
 class NewsController extends HomeController
 {
 
+    public function vue($route)
+    {
+
+        switch($route){
+            case "index":
+                $news=News::select("id","text")->where("sh",1)->get()->filter(function($val,$idx){
+                    if($idx>4){
+                        $this->view['news']['more']=['show'=>true,'href'=>'/news'];     
+                    }else{
+                        $val->short=mb_substr(str_replace("\r\n"," ",$val->text),0,25,"utf8")."...";
+                        $val->text=str_replace("\r\n","",nl2br($val->text));
+                        $val->show=false;
+                        $this->view['news']['more']=['show'=>false]; 
+                        return $val;
+                    }
+                });
+            break;
+            case "all":
+                $news=News::select("id","text")->where("sh",1)->get()->filter(function($val,$idx){
+                        $val->short=mb_substr(str_replace("\r\n"," ",$val->text),0,25,"utf8")."...";
+                        $val->text=str_replace("\r\n","",nl2br($val->text));
+                        $val->show=false;
+                        $this->view['news']['more']=['show'=>false]; 
+                        return $val;
+                });
+            break;
+        }
+
+        return $news;
+    }
+
     public function list(){
         parent::sideBar();
         $this->view['news']=News::where('sh',1)->paginate(5);

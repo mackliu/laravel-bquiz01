@@ -21,7 +21,7 @@ export default {
             }, 3000);
         })
 
-        /* return { props } */
+        return { props }
     }
 }
 </script>
