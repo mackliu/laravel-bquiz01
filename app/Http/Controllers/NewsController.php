@@ -9,32 +9,33 @@ class NewsController extends HomeController
 
     public function vue($route)
     {
-
+        $more=[];
         switch($route){
             case "index":
-                $news=News::select("id","text")->where("sh",1)->get()->filter(function($val,$idx){
+                $news=News::select("id","text")->where("sh",1)->get()->filter(function($val,$idx)use(&$more){
                     if($idx>4){
-                        $this->view['news']['more']=['show'=>true,'href'=>'/news'];     
+                        $more=['show'=>true,'href'=>'/news'];     
                     }else{
                         $val->short=mb_substr(str_replace("\r\n"," ",$val->text),0,25,"utf8")."...";
                         $val->text=str_replace("\r\n","",nl2br($val->text));
                         $val->show=false;
-                        $this->view['news']['more']=['show'=>false]; 
+                        $more=['show'=>false];
+                        
                         return $val;
                     }
                 });
             break;
-            case "all":
-                $news=News::select("id","text")->where("sh",1)->get()->filter(function($val,$idx){
+            case "news":
+                $news=News::select("id","text")->where("sh",1)->get()->filter(function($val,$idx)use(&$more){
                         $val->short=mb_substr(str_replace("\r\n"," ",$val->text),0,25,"utf8")."...";
                         $val->text=str_replace("\r\n","",nl2br($val->text));
                         $val->show=false;
-                        $this->view['news']['more']=['show'=>false]; 
+                        $more=['show'=>false]; 
                         return $val;
                 });
             break;
         }
-
+        $news=['news'=>$news,'more'=>$more];
         return $news;
     }
 
