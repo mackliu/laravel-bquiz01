@@ -2,21 +2,16 @@ require('./bootstrap');
 import { createApp } from 'vue';
 import Marquee from "./components/Marquee.vue"
 import Images from "./components/Images.vue"
-import Mvims from "./components/Mvims.vue"
-import News from "./components/News.vue"
 import Menus from "./components/Menus.vue"
 import LoginBtn from "./components/LoginBtn.vue"
-import Login from "./components/Login.vue"
+import router from './router.js';
 
 const app={
     components:{
         'marquee':Marquee,
         'images':Images,
-        'mvims':Mvims,
-        'news':News,
         'menus':Menus,
         'login-btn':LoginBtn,
-        'login':Login
     },
     data(){
         return {
@@ -46,5 +41,5 @@ const app={
     }
 }
 
-createApp(app).mount('#app')
+createApp(app).use(router).mount('#app')
 
