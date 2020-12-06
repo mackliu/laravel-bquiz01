@@ -27,9 +27,12 @@ class AdminController extends HomeController
         ];
 
         if(Auth::attempt($user)){
-            return redirect('/admin');
+            
+            return ['error'=>'success'];
+            //return redirect('/admin');
         }else{
-            return redirect('/login')->with('error','帳號或密碼錯誤');
+            return ['error'=>true,'meg'=>"帳號或密碼錯誤"];
+            //return redirect('/login')->with('error','帳號或密碼錯誤');
         }
 
 

@@ -51,6 +51,23 @@ class HomeController extends Controller
 
         $this->view['mvims']=$mvims;
         $this->view['news']['data']=$news;
+        if(Auth::check()){
+
+            $this->view['auth']=[
+                'href'=>'/admin',
+                'class'=>'btn-success',
+                'text'=>'返回管理',
+                'user'=>Auth::user()->acc
+            ];
+        }else{
+            $this->view['auth']=[
+                'href'=>'/login',
+                'class'=>'btn-primary',
+                'text'=>'管理登入',
+                'user'=>'訪客'
+            ];
+
+        }
 
         return $this->view;
     }
