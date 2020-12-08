@@ -2,7 +2,7 @@
     <div class="news" style="height:265px">
     <div class="text-center py-2 border-bottom my-1">{{title}}
 
-            <a class="float-right" :href="more.href" v-if="more.show">More...</a>
+            <router-link class="float-right" :to="more.href" v-if="more.show">More...</router-link>
 
     </div>
     <ul class="list-group" style="position:relative">
@@ -19,7 +19,7 @@
         </li>
 
     </ul>
-    <div class="d-flex justify-content-center p-2">
+    <div class="d-flex justify-content-center p-2" v-if="paginate.show">
         <a class="d-block p-1 border" href="#" @click="page(paginate.prev)" v-if="paginate.prev>0"> &lt; </a>
         <a class="d-block p-1 border" href="#" @click="page(p)" v-for="(p,idx) in paginate.links" :key="idx">{{ p }}</a>
         <a class="d-block p-1 border" href="#" @click="page(paginate.next)" v-if="paginate.next>0"> &gt; </a>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import {onMounted, ref ,reactive} from 'vue';
+import {onMounted, ref ,reactive, watch} from 'vue';
 
 export default {
     props:['route'],
@@ -48,6 +48,7 @@ export default {
             'next':0,
             'pages':0,
             'start':1,
+            'show':false
 
         })
 
@@ -62,11 +63,11 @@ export default {
             })
         }
 
-
-        onMounted(()=>{
+        const chageRoute=()=>{
             switch(props.route){
                 case "index":
                     title.value="最新消息區"
+                    paginate.show=false
                 break;
                 case "news":
                     title.value="更多最新消息區"
@@ -80,13 +81,25 @@ export default {
                             paginate.total=res.data.news.length;
                             paginate.pages=Math.ceil(paginate.total/paginate.div);
                             paginate.items=res.data.news;
+                            paginate.links.length=0;
                             for(let i=1;i<=paginate.pages;i++){
                                 paginate.links.push(i)
                             }
-                            
+                            paginate.show=true
                             page(1)
                         }
                     })
+        }
+
+        watch(
+            props,
+            (old,newer)=>{
+                chageRoute();
+            }
+        )
+
+        onMounted(()=>{
+            chageRoute();
         })
 
         return { title,props ,news,more,paginate,page}

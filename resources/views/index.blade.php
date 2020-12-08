@@ -23,10 +23,7 @@
             </div>
             <div class="main col-6">
                 <marquee>@{{ site.ads  }}</marquee>
-                <router-link to="/">home</router-link>
-                <router-link to="news">news</router-link>
-                <router-link to="login">login</router-link>
-
+                <router-view :mvims="mvims" name='mvim'></router-view>
                 <router-view></router-view>
             </div>
             <div class="right col-3">

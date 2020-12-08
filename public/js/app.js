@@ -28408,7 +28408,6 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/li
   \************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 11:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -28602,7 +28601,6 @@ module.exports = function xhrAdapter(config) {
   \*****************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 50:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -28669,7 +28667,6 @@ module.exports.default = axios;
   \*************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 19:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -28702,7 +28699,6 @@ module.exports = Cancel;
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 57:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -28773,7 +28769,6 @@ module.exports = CancelToken;
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 3:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -28792,7 +28787,6 @@ module.exports = function isCancel(value) {
   \**********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 94:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -28900,7 +28894,6 @@ module.exports = Axios;
   \***********************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 52:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -28966,7 +28959,6 @@ module.exports = InterceptorManager;
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 15:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29000,7 +28992,6 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
   \****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 15:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29032,7 +29023,6 @@ module.exports = function createError(message, config, code, request, response) 
   \********************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 23:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29125,7 +29115,6 @@ module.exports = function dispatchRequest(config) {
   \*****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -29181,7 +29170,6 @@ module.exports = function enhanceError(error, config, code, request, response) {
   \****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29268,7 +29256,6 @@ module.exports = function mergeConfig(config1, config2) {
   \***********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29307,7 +29294,6 @@ module.exports = function settle(resolve, reject, response) {
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29341,7 +29327,6 @@ module.exports = function transformData(data, headers, fns) {
   \********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 97:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29452,7 +29437,6 @@ module.exports = defaults;
   \************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 3:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -29477,7 +29461,6 @@ module.exports = function bind(fn, thisArg) {
   \****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 23:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29562,7 +29545,6 @@ module.exports = function buildURL(url, params, paramsSerializer) {
   \*******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 10:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -29590,7 +29572,6 @@ module.exports = function combineURLs(baseURL, relativeURL) {
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 5:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29657,7 +29638,6 @@ module.exports = (
   \*********************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 9:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -29685,7 +29665,6 @@ module.exports = function isAbsoluteURL(url) {
   \***********************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 5:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29767,7 +29746,6 @@ module.exports = (
   \***************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 5:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29793,7 +29771,6 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
   \********************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 27:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -29860,7 +29837,6 @@ module.exports = function parseHeaders(headers) {
   \**************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 23:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -29901,7 +29877,6 @@ module.exports = function spread(callback) {
   \*****************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 322:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -30510,7 +30485,8 @@ __webpack_require__.r(__webpack_exports__);
       'prev': 0,
       'next': 0,
       'pages': 0,
-      'start': 1
+      'start': 1,
+      'show': false
     });
 
     var page = function page(p) {
@@ -30524,10 +30500,11 @@ __webpack_require__.r(__webpack_exports__);
       });
     };
 
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+    var chageRoute = function chageRoute() {
       switch (props.route) {
         case "index":
           title.value = "最新消息區";
+          paginate.show = false;
           break;
 
         case "news":
@@ -30543,14 +30520,23 @@ __webpack_require__.r(__webpack_exports__);
           paginate.total = res.data.news.length;
           paginate.pages = Math.ceil(paginate.total / paginate.div);
           paginate.items = res.data.news;
+          paginate.links.length = 0;
 
           for (var i = 1; i <= paginate.pages; i++) {
             paginate.links.push(i);
           }
 
+          paginate.show = true;
           page(1);
         }
       });
+    };
+
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.watch)(props, function (old, newer) {
+      chageRoute();
+    });
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      chageRoute();
     });
     return {
       title: title,
@@ -30717,12 +30703,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
-    href: $props.auth.href,
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_router_link, {
+    to: $props.auth.href,
     "class": ["btn py-3 w-100 my-2", $props.auth["class"]]
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.text) + "(" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user) + ") ", 11
-  /* TEXT, CLASS, PROPS */
-  , ["href"]);
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.text) + "(" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user) + ") ", 1
+      /* TEXT */
+      )];
+    }),
+    _: 1
+  }, 8
+  /* PROPS */
+  , ["to", "class"]);
 }
 
 /***/ }),
@@ -30810,6 +30805,8 @@ var _hoisted_4 = {
   "class": "viewer"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.menus, function (menu) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", {
       "class": "list-group-item list-group-item-action py-1 bg-warning position-relative menu",
@@ -30820,22 +30817,36 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return menu.show = false;
       },
       key: menu.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-      href: menu.href
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(menu.text), 9
-    /* TEXT, PROPS */
-    , ["href"]), menu.subs.length > 0 ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("ul", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(menu.subs, function (sub) {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      to: menu.href
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(menu.text), 1
+        /* TEXT */
+        )];
+      }),
+      _: 2
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"]), menu.subs.length > 0 ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("ul", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(menu.subs, function (sub) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", {
         "class": "list-group-item list-group-item-action bg-success py-1",
         key: sub.id
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-        href: sub.href,
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+        to: sub.href,
         style: {
           "color": "white"
         }
-      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub.text), 9
-      /* TEXT, PROPS */
-      , ["href"])]);
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub.text), 1
+          /* TEXT */
+          )];
+        }),
+        _: 2
+      }, 1032
+      /* PROPS, DYNAMIC_SLOTS */
+      , ["to"])]);
     }), 128
     /* KEYED_FRAGMENT */
     ))], 512
@@ -30923,25 +30934,36 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "text-center py-2 border-bottom my-1"
 };
-var _hoisted_3 = {
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("More...");
+
+var _hoisted_4 = {
   "class": "list-group",
   style: {
     "position": "relative"
   }
 };
-var _hoisted_4 = {
+var _hoisted_5 = {
+  key: 0,
   "class": "d-flex justify-content-center p-2"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.title) + " ", 1
   /* TEXT */
-  ), $setup.more.show ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
+  ), $setup.more.show ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_router_link, {
     key: 0,
     "class": "float-right",
-    href: $setup.more.href
-  }, "More...", 8
+    to: $setup.more.href
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_3];
+    }),
+    _: 1
+  }, 8
   /* PROPS */
-  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.news, function (ns, idx) {
+  , ["to"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.news, function (ns, idx) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", {
       "class": "list-group-item list-group-item-action p-1 new",
       style: {
@@ -30976,7 +30998,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["onMouseover", "onMouseleave"]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [$setup.paginate.prev > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
+  ))]), $setup.paginate.show ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [$setup.paginate.prev > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
     key: 0,
     "class": "d-block p-1 border",
     href: "#",
@@ -31003,7 +31025,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.page($setup.paginate.next);
     })
-  }, " > ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
+  }, " > ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -31130,10 +31152,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   path: '/',
-  component: _components_Mvims__WEBPACK_IMPORTED_MODULE_0__.default
+  components: {
+    "default": _components_News__WEBPACK_IMPORTED_MODULE_1__.default,
+    mvim: _components_Mvims__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  props: {
+    "default": {
+      route: 'index'
+    }
+  }
 }, {
   path: '/news',
-  component: _components_News__WEBPACK_IMPORTED_MODULE_1__.default
+  component: _components_News__WEBPACK_IMPORTED_MODULE_1__.default,
+  props: {
+    route: 'news'
+  }
 }, {
   path: '/login',
   component: _components_Login__WEBPACK_IMPORTED_MODULE_2__.default
@@ -31415,9 +31448,6 @@ async function asyncWalk(
   \***************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, module.loaded, module.id, module, __webpack_require__.nmd, top-level-this-exports, __webpack_require__.g, __webpack_require__, __webpack_require__.* */
-/*! CommonJS bailout: this is used directly at 17161:7-11 */
-/*! CommonJS bailout: exports is used directly at 425:50-57 */
-/*! CommonJS bailout: exports is used directly at 425:82-89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);

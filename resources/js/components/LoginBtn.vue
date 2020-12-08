@@ -1,8 +1,8 @@
 <template>
 
-  <a :href="auth.href" class="btn py-3 w-100 my-2" :class="auth.class">
+  <router-link :to="auth.href" class="btn py-3 w-100 my-2" :class="auth.class">
   {{auth.text}}({{ auth.user }})
-  </a>
+  </router-link>
 </template>
 <script>
 export default {

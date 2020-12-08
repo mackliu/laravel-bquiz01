@@ -4,8 +4,8 @@ import News from './components/News';
 import Login from './components/Login';
 
 const routes=[
-    {path:'/',component:Mvims},
-    {path:'/news',component:News},
+    {path:'/',components:{default:News,mvim:Mvims},props:{default:{route:'index'}}},
+    {path:'/news',component:News,props:{route:'news'}},
     {path:'/login',component:Login},
 ]
 

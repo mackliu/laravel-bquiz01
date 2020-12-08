@@ -29,11 +29,21 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function(){
     return view('index');
 });
+Route::get('/{path}', function($path){
+    if($path!='admin'){
+        return view('index');
+    }else{
+
+        return view('admin');
+    }
+});
+
+
 //Route::get('/', [HomeController::class,'index']);
-Route::get('/news', [NewsController::class,'list']);
-Route::get('/login', [AdminController::class,'showLoginForm'])->name('login');
-Route::post('/login', [AdminController::class,'login']);
-Route::get('/logout', [AdminController::class,'logout']);
+//Route::get('/news', [NewsController::class,'list']);
+//Route::get('/login', [AdminController::class,'showLoginForm'])->name('login');
+//Route::post('/login', [AdminController::class,'login']);
+//Route::get('/logout', [AdminController::class,'logout']);
 
 Route::redirect('/admin','/admin/title');
 Route::prefix('admin')->middleware('auth')->group(function(){
